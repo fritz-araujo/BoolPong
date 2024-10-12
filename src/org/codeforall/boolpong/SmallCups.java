@@ -1,4 +1,8 @@
 package org.codeforall.boolpong;
 
-public class SmallCups {
+/*
+    small cups are going to be displayed as player score
+ */
+
+public class SmallCups implements Cups{
 }

@@ -1,4 +1,4 @@
 package org.codeforall.boolpong;
 
-public class NormalCups {
+public class NormalCups implements Cups{
 }

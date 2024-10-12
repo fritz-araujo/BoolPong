@@ -1,6 +1,6 @@
-package org.codeforall.boolpong;
+package org.codeforall.boolpong.testplayground;
 /*
-    test your code here
+    test your code snippets here
  */
 
 public class TestPlayground {
