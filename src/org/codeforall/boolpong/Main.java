@@ -8,11 +8,15 @@ public class Main {
     public static void main(String[] args) {
 
         //set canvas
-        Canvas.setMaxX(1070); //full hd resolution -10
-        Canvas.setMaxY(1910); //currently not working properly
+        Canvas.setMaxX(440); //background resolution -10
+        Canvas.setMaxY(790); //currently not working properly
 
         //set background
-        Picture background = new Picture(0, 0, "assets/test.png");
+        Picture background = new Picture(0, 0, "assets/background.png");
         background.draw();
+
+        //set players
+        Player player1 = new Player();
+
     }
 }
