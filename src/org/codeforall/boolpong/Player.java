@@ -7,8 +7,7 @@ public class Player {
     private Picture ballPicture;
 
     public Player(){
-        ballPicture = new Picture(); //still need to pass the ball picture as argument
+        ballPicture = new Picture(0, 0, ""); //still need to pass the ball picture as argument
         ballPicture.draw();
     }
-
 }
