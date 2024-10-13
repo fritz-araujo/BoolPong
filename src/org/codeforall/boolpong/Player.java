@@ -4,10 +4,13 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player {
 
-    private Picture ballPicture;
+    private Ball ball;
 
     public Player(){
-        ballPicture = new Picture(220, 700, "assets/ball.png");
-        ballPicture.draw();
+        this.ball = new Ball();
+    }
+
+    public void shoot(){
+        ball.shoot();
     }
 }

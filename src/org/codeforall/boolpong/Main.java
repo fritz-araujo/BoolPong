@@ -9,14 +9,16 @@ public class Main {
 
         //set canvas
         Canvas.setMaxX(440); //background resolution -10
-        Canvas.setMaxY(790); //currently not working properly
+        Canvas.setMaxY(790);
 
         //set background
         Picture background = new Picture(0, 0, "assets/background.png");
         background.draw();
 
-        //set players
+        //set players - creates a ball
         Player player1 = new Player();
 
+        //initialise keyboard
+        new MyKeyboardHandler(player1);
     }
 }

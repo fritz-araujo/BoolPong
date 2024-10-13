@@ -1,7 +1,8 @@
 package org.codeforall.boolpong;
 
-public interface Cups {
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+public interface Cups {
 
 
 }

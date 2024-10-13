@@ -1,8 +1,7 @@
 package org.codeforall.boolpong.testplayground;
 /*
     test your code snippets here
- */
-
+*/
 import org.codeforall.boolpong.MyKeyboardHandler;
 import org.codeforall.boolpong.Player;
 

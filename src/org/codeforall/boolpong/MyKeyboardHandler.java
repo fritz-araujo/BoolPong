@@ -26,12 +26,12 @@ public class MyKeyboardHandler implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if(keyboardEvent.getKey() == keyboardEvent.KEY_SPACE){
-            System.out.println("shoot!"); //shootBall();
+            player.shoot(); //not working properly
+            System.out.println("shoot!");
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
-
     }
 }
