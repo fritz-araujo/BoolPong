@@ -1,6 +1,4 @@
 package org.codeforall.boolpong;
-
-
 import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
