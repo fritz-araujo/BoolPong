@@ -1,5 +1,4 @@
 package org.codeforall.boolpong;
-
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -26,7 +25,7 @@ public class MyKeyboardHandler implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if(keyboardEvent.getKey() == keyboardEvent.KEY_SPACE){
-            player.shoot(); //not working properly
+            player.shoot();
             System.out.println("shoot!");
         }
     }

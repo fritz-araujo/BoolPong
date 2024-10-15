@@ -1,10 +1,17 @@
 package org.codeforall.boolpong;
-
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Ball {
 
+    public static volatile boolean idle = true;
     private Picture ballPic;
+    private int drunk = 2;
+
+    private boolean ballShot = false;
+
+    public void setBallShot(boolean ballShot) {
+        this.ballShot = ballShot;
+    }
 
     public Ball(){
         ballPic = new Picture(220, 750, "assets/ball.png");
@@ -12,10 +19,45 @@ public class Ball {
     }
 
     public void shoot(){
-        ballPic.translate(0, 50);
+        ballPic.translate(0, -50);
+    }
+
+    public void start(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                idle();
+            }
+        }).start();
+    }
+
+    public void idle(){
+        while (idle && !ballShot){
+            ballMovement();
+        }
     }
 
     public void ballMovement(){
-        //side to side (before shooting) method
+        if (ballPic.getX() == 0) {
+            while (ballPic.getX() < 410 && idle && !ballShot) {
+                ballPic.translate(1, 0);
+                try {
+                    Thread.sleep(drunk);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (ballPic.getX() == 410) {
+            while (ballPic.getX() > 0 && idle && !ballShot) {
+                ballPic.translate(-1, 0);
+                try {
+                    Thread.sleep(drunk);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            ballPic.translate(-1, 0);
+        }
     }
 }

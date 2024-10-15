@@ -1,16 +1,16 @@
 package org.codeforall.boolpong;
 
-import org.academiadecodigo.simplegraphics.pictures.Picture;
-
 public class Player {
 
     private Ball ball;
 
     public Player(){
         this.ball = new Ball();
+        ball.start();
     }
 
     public void shoot(){
         ball.shoot();
+        ball.setBallShot(true);
     }
 }
