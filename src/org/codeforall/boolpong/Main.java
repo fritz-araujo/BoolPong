@@ -13,6 +13,8 @@ public class Main {
         Picture background = new Picture(0, 0, "assets/background.png");
         background.draw();
 
+        GameFlow game = new GameFlow();
+
         //set players - creates a ball
         Player player1 = new Player();
 
