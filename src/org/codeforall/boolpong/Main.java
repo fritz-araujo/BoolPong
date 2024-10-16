@@ -10,17 +10,17 @@ public class Main {
         Canvas.setMaxY(790);
 
         //set background
-        Picture background = new Picture(0, 0, "assets/background.png");
+        Picture background = new Picture(0, 0, "assets/new800x450_px/background.png");
+        Picture table = new Picture(0, 200,"assets/new800x450_px/table.png");
         background.draw();
+        table.draw();
 
         //CREATE CUP ARRAY! with position with the right sprites
-
         //set players - creates a ball
         Player player1 = new Player();
 
         //initialise keyboard
         new MyKeyboardHandler(player1);
-
 
         //game initialisation
         player1.startGame();
