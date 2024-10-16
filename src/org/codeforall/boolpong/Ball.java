@@ -5,7 +5,8 @@ public class Ball {
 
     public static volatile boolean idle = true;
     private Picture ballPic;
-    private int drunk = 2;
+    private int drunk = 6;
+    private int randomizerPosition;
 
     private boolean ballShot = false;
 
@@ -19,7 +20,18 @@ public class Ball {
     }
 
     public void shoot(){
-        ballPic.translate(0, -50);
+        randomizerPosition = 400 + (int)(Math.random()*250);
+        int i = 0;
+        while (i < randomizerPosition){
+            ballPic.translate(0, -1);
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            i++;
+        }
+
     }
 
     public void start(){
@@ -40,7 +52,7 @@ public class Ball {
     public void ballMovement(){
         if (ballPic.getX() == 0) {
             while (ballPic.getX() < 410 && idle && !ballShot) {
-                ballPic.translate(1, 0);
+                ballPic.translate(5, 0);
                 try {
                     Thread.sleep(drunk);
                 } catch (InterruptedException e) {
@@ -49,7 +61,7 @@ public class Ball {
             }
         } else if (ballPic.getX() == 410) {
             while (ballPic.getX() > 0 && idle && !ballShot) {
-                ballPic.translate(-1, 0);
+                ballPic.translate(-5, 0);
                 try {
                     Thread.sleep(drunk);
                 } catch (InterruptedException e) {
@@ -57,7 +69,7 @@ public class Ball {
                 }
             }
         } else {
-            ballPic.translate(-1, 0);
+            ballPic.translate(-5, 0);
         }
     }
 }
