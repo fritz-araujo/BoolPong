@@ -13,10 +13,16 @@ public class Main {
         Picture background = new Picture(0, 0, "assets/background.png");
         background.draw();
 
+        //CREATE CUP ARRAY! with position with the right sprites
+
         //set players - creates a ball
         Player player1 = new Player();
 
         //initialise keyboard
         new MyKeyboardHandler(player1);
+
+
+        //game initialisation
+        player1.startGame();
     }
 }
