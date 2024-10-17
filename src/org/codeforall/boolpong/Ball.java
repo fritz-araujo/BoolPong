@@ -3,6 +3,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Ball {
 
+    private final String PREFIX = "assets/";
+
     public static volatile boolean idle = true;
     private Picture ballPic;
     private int drunk = 6;
@@ -15,15 +17,17 @@ public class Ball {
     }
 
     public Ball(){
-        ballPic = new Picture(220, 750, "assets/ball.png");
+        ballPic = new Picture(220, 750, PREFIX + "ball.png");
         ballPic.draw();
     }
+
 
     public void shoot(){
         randomizerPosition = 400 + (int)(Math.random()*250);
         int i = 0;
         while (i < randomizerPosition){
             ballPic.translate(0, -1);
+            ballPic.draw();
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
@@ -31,7 +35,6 @@ public class Ball {
             }
             i++;
         }
-
     }
 
     public void start(){

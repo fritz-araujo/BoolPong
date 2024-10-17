@@ -6,8 +6,8 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class MyKeyboardHandler implements KeyboardHandler {
 
-    private Keyboard keyboard;
-    private Player player;
+    private final Keyboard keyboard;
+    private final Player player;
 
     public MyKeyboardHandler(Player player){
         keyboard = new Keyboard(this);
@@ -16,15 +16,15 @@ public class MyKeyboardHandler implements KeyboardHandler {
     }
 
     public void setKeyboardEvents(){
-        KeyboardEvent left = new KeyboardEvent();
-        left.setKey(KeyboardEvent.KEY_SPACE);
-        left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboard.addEventListener(left);
+        KeyboardEvent space = new KeyboardEvent();
+        space.setKey(KeyboardEvent.KEY_SPACE);
+        space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(space);
     }
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-        if(keyboardEvent.getKey() == keyboardEvent.KEY_SPACE){
+        if(keyboardEvent.getKey() == KeyboardEvent.KEY_SPACE){
             player.shoot();
             System.out.println("shoot!");
         }
