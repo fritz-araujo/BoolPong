@@ -17,13 +17,13 @@ public class Player {
     public void startGame(){
         if (allCupsDown != 0) {
             this.ball = new Ball();
-            ball.start();
+            ball.stayMoving();
         }
     }
 
     public void shoot(){
         ball.setBallShot(true);
-        ball.shoot();
+        ball.threadShoot();
 
     }
 

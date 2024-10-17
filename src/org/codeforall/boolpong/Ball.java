@@ -21,13 +21,28 @@ public class Ball {
         ballPic.draw();
     }
 
+    public void threadShoot() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                shoot();
+            }
+        }).start();
+    }
 
+    public void stayMoving(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                idle();
+            }
+        }).start();
+    }
     public void shoot(){
         randomizerPosition = 400 + (int)(Math.random()*250);
         int i = 0;
         while (i < randomizerPosition){
             ballPic.translate(0, -1);
-            ballPic.draw();
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
@@ -37,14 +52,6 @@ public class Ball {
         }
     }
 
-    public void start(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                idle();
-            }
-        }).start();
-    }
 
     public void idle(){
         while (idle && !ballShot){
