@@ -26,7 +26,6 @@ public class MyKeyboardHandler implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if(keyboardEvent.getKey() == KeyboardEvent.KEY_SPACE){
             player.shoot();
-            System.out.println("shoot!");
         }
     }
 
