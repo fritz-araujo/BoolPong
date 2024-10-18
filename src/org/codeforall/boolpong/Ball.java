@@ -3,7 +3,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Ball {
 
-    //All ball properties
+    //Ball class properties
     private final String PREFIX = "assets/";
     public static volatile boolean idle = true;
     private Picture ballPic;
@@ -17,7 +17,12 @@ public class Ball {
         this.ballShot = ballShot;
     }
 
-    //Ball constructor gets the ball picture and .draw's it
+    //Getter for the ball shot to check if the ball has been shot already
+    public boolean getBallShot(){
+        return ballShot;
+    }
+
+    //Ball class constructor gets the ball picture and .draw's it
     public Ball(){
         ballPic = new Picture(220, 750, PREFIX + "ball.png");
         ballPic.draw();

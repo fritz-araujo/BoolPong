@@ -11,7 +11,7 @@ public class Player {
     private Cups[] cups = new Cups[6];
 
     public Player(){
-        showCups();
+        createCups();
     }
 
     public void startGame(){

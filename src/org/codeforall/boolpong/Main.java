@@ -23,7 +23,7 @@ public class Main {
         new MyKeyboardHandler(player1);
 
         //game initialisation
-        player1.startGame();
+        player1.newBall();
 
         Field field;
         field = new Field(22, 40);
