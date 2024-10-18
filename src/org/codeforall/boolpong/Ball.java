@@ -3,24 +3,28 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Ball {
 
+    //All ball properties
     private final String PREFIX = "assets/";
-
     public static volatile boolean idle = true;
     private Picture ballPic;
     private int drunk = 6;
     private int randomizerPosition;
-
     private boolean ballShot = false;
 
+
+    //Setter for the ball shot to update, when the ball has been shot
     public void setBallShot(boolean ballShot) {
         this.ballShot = ballShot;
     }
 
+    //Ball constructor gets the ball picture and .draw's it
     public Ball(){
         ballPic = new Picture(220, 750, PREFIX + "ball.png");
         ballPic.draw();
     }
 
+    //Controls all the ball movement up after it has been shot
+            //Makes a new thread, so it checks every instance, in order to get a smooth movement
     public void threadShoot() {
         new Thread(new Runnable() {
             @Override
@@ -30,14 +34,8 @@ public class Ball {
         }).start();
     }
 
-    public void stayMoving(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                idle();
-            }
-        }).start();
-    }
+            //Actual shoot logic, right now at random
+            //NEEDING UPDATE WITH THE BALL FORCE!!
     public void shoot(){
         randomizerPosition = 400 + (int)(Math.random()*250);
         int i = 0;
@@ -52,14 +50,26 @@ public class Ball {
         }
     }
 
+    //Controls all the side to side movement of the ball
+                //Makes a new thread so the idle movement doesn't block every other instruction
+    public void stayMoving(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                idle();
+            }
+        }).start();
+    }
 
+            //Controls if the ball is still idle(moving side to side) and the space to shot hasn't been triggered
     public void idle(){
         while (idle && !ballShot){
-            ballMovement();
+            ballMovementIdle();
         }
     }
 
-    public void ballMovement(){
+            //The moving of the ball when the game starts, side to side
+    public void ballMovementIdle(){
         if (ballPic.getX() == 0) {
             while (ballPic.getX() < 410 && idle && !ballShot) {
                 ballPic.translate(5, 0);
@@ -82,4 +92,6 @@ public class Ball {
             ballPic.translate(-5, 0);
         }
     }
+
+    //End of ball side to side control
 }
