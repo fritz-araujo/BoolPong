@@ -9,6 +9,7 @@ public class Player {
     private Ball ball;
     private int allCupsDown = 6;
     private Cups[] cups = new Cups[6];
+    Sound sound = new Sound();
 
     //Player class constructor
     public Player(){
@@ -32,6 +33,8 @@ public class Player {
         if (!ball.getBallShot()){
             ball.setBallShot(true);
             ball.threadShoot();
+            sound.playSound("resources/glug.wav");
+
         } else newBall();
     }
 
@@ -60,5 +63,4 @@ public class Player {
     public void quitGame(){
         System.exit(0);
     }
-
 }
