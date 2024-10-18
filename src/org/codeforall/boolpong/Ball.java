@@ -45,7 +45,7 @@ public class Ball {
     }
 
             //Actual shoot logic, right now at random
-            //NEEDING UPDATE WITH THE BALL FORCE!!
+            /*NEEDING UPDATE WITH THE BALL FORCE!!*/
     public void shoot(){
         randomizerPosition = 400 + (int)(Math.random()*250);
         int i = 0;

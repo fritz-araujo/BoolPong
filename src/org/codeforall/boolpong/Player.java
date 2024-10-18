@@ -33,7 +33,7 @@ public class Player {
         if (!ball.getBallShot()){
             ball.setBallShot(true);
             ball.threadShoot();
-            sound.playSound(PREFIX + "glug.wav");//IMPLEMENTATION FOR THE SOUND TO PLAY WHEN ALLCUPSDOWN--
+            sound.playSound(PREFIX + "glug.wav");/*IMPLEMENTATION FOR THE SOUND TO PLAY WHEN ALLCUPSDOWN--*/
 
         } else newBall();
     }
@@ -57,7 +57,7 @@ public class Player {
 
     //GAME FLOW STUFF
     public void restartGame(){
-        System.out.println("game restarted"); //STILL NEEDS TO BE WORKED ON
+        System.out.println("game restarted"); /*STILL NEEDS TO BE WORKED ON*/
     }
 
     public void quitGame(){

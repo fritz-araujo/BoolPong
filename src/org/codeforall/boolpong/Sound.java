@@ -26,7 +26,7 @@ public class Sound {
     }
 
     //Sound method logic for the sound play
-    //STILL NEEDS THE CORRECT IMPLEMENTATION FOR THE SOUND TO PLAY AFTER CUP REMOVED
+    /*STILL NEEDS THE CORRECT IMPLEMENTATION FOR THE SOUND TO PLAY AFTER CUP REMOVED*/
     public void threadPlaySound(String soundFile) {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile).getAbsoluteFile());

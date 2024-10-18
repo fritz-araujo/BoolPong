@@ -47,7 +47,7 @@ public class MyKeyboardHandler implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //ENTER - startGame()
-        if(keyboardEvent.getKey() == KeyboardEvent.KEY_ENTER){ //STILL NEEDS TO BE WORKED ON
+        if(keyboardEvent.getKey() == KeyboardEvent.KEY_ENTER){ /*STILL NEEDS TO BE WORKED ON*/
             System.out.println("STARTING KEY WORKING");
         }
 
@@ -57,7 +57,7 @@ public class MyKeyboardHandler implements KeyboardHandler {
         }
 
         //R - restart()
-        if(keyboardEvent.getKey() == KeyboardEvent.KEY_R){ //STILL NEEDS TO BE WORKED ON
+        if(keyboardEvent.getKey() == KeyboardEvent.KEY_R){ /*STILL NEEDS TO BE WORKED ON*/
             System.out.println("RESTARTED KEY WORKING");
         }
 
