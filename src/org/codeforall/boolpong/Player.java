@@ -33,7 +33,7 @@ public class Player {
         if (!ball.getBallShot()){
             ball.setBallShot(true);
             ball.threadShoot();
-            sound.playSound("resources/glug.wav");
+            sound.playSound(PREFIX + "glug.wav");//IMPLEMENTATION FOR THE SOUND TO PLAY WHEN ALLCUPSDOWN--
 
         } else newBall();
     }

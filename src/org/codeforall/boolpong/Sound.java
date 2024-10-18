@@ -10,10 +10,24 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Sound {
 
+    //Sound class constructor
     public Sound(){
     }
 
-    public void playSound(String soundFile) {
+
+    //Method for the sound to be threaded to not fix the instructions
+    public void playSound(final String soundFile) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                threadPlaySound(soundFile);
+            }
+        }).start();
+    }
+
+    //Sound method logic for the sound play
+    //STILL NEEDS THE CORRECT IMPLEMENTATION FOR THE SOUND TO PLAY AFTER CUP REMOVED
+    public void threadPlaySound(String soundFile) {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile).getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
