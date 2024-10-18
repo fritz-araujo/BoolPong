@@ -24,8 +24,5 @@ public class Main {
 
         //game initialisation
         player1.startGame();
-
-        Field field;
-        field = new Field(22, 40);
     }
 }
