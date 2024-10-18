@@ -5,13 +5,14 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Main {
     public static void main(String[] args) {
 
+        final String PREFIX = "resources/";
         //set canvas
         Canvas.setMaxX(440); //background resolution -10
         Canvas.setMaxY(790);
 
         //set background
-        Picture background = new Picture(0, 0, "assets/new800x450_px/background.png");
-        Picture table = new Picture(0, 200,"assets/new800x450_px/table.png");
+        Picture background = new Picture(0, 0, PREFIX +"background.png");
+        Picture table = new Picture(0, 200,PREFIX + "table.png");
         background.draw();
         table.draw();
 
@@ -25,7 +26,8 @@ public class Main {
         //game initialisation
         player1.newBall();
 
-        Field field;
-        field = new Field(22, 40);
+
+//        Field field;
+//        field = new Field(22, 40);
     }
 }

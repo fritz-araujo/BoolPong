@@ -3,6 +3,7 @@ package org.codeforall.boolpong;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Cups {
+
     //Cups class properties
     private boolean wasHit = false;
     private Picture sprite;
