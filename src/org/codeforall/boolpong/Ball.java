@@ -28,6 +28,11 @@ public class Ball {
         ballPic.draw();
     }
 
+    //Method to remove the current ball from the screen
+    public void removeBall(){
+        ballPic.delete();
+    }
+
     //Controls all the ball movement up after it has been shot
             //Makes a new thread, so it checks every instance, in order to get a smooth movement
     public void threadShoot() {
