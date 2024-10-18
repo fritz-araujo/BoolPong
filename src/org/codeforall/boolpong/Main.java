@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         final String PREFIX = "resources/";
+
         //set canvas
         Canvas.setMaxX(440); //background resolution -10
         Canvas.setMaxY(790);
@@ -25,7 +26,6 @@ public class Main {
 
         //game initialisation
         player1.newBall();
-
 
 //        Field field;
 //        field = new Field(22, 40);
