@@ -18,6 +18,9 @@ public class Player {
     //Game start, creates a ball if we have cups, and the ball stays moving until method "shoot"
     public void newBall(){
         if (allCupsDown != 0) {
+            if (ball != null) {
+                ball.removeBall();
+            }
             this.ball = new Ball();
             ball.stayMoving();
         }
