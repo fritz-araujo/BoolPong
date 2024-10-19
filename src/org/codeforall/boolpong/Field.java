@@ -1,4 +1,4 @@
-package org.codeforall.boolpong;
+/*package org.codeforall.boolpong;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
@@ -44,3 +44,4 @@ public class Field {
         return grid;
     }
 }
+*/

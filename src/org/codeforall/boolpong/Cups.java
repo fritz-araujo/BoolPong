@@ -15,6 +15,21 @@ public class Cups {
         this.sprite = sprite;
         sprite.draw();
     }
+    public int getXPos() {
+        return sprite.getX();
+    }
+
+    public int getYPos() {
+        return sprite.getY();
+    }
+
+    public int getWidth() {
+        return sprite.getWidth();
+    }
+
+    public int getHeight() {
+        return sprite.getHeight();
+    }
 
     //Cup remover
     public void cupRemover(){

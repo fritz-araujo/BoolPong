@@ -11,7 +11,19 @@ public class Ball {
     private int randomizerPosition;
     private boolean ballShot = false;
 
+    //Ball class constructor gets the ball picture and .draw's it
+    public Ball(){
+        ballPic = new Picture(220, 750, PREFIX + "ball.png");
+        ballPic.draw();
+    }
 
+    public int getX() {
+        return ballPic.getX();
+    }
+
+    public int getY() {
+        return ballPic.getY();
+    }
     //Setter for the ball shot to update, when the ball has been shot
     public void setBallShot(boolean ballShot) {
         this.ballShot = ballShot;
@@ -25,12 +37,6 @@ public class Ball {
     //Setter for the drunk int
     public void setDrunk(){
         drunk--;
-    }
-
-    //Ball class constructor gets the ball picture and .draw's it
-    public Ball(){
-        ballPic = new Picture(220, 750, PREFIX + "ball.png");
-        ballPic.draw();
     }
 
     //Method to remove the current ball from the screen
