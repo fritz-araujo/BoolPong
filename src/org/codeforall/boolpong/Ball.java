@@ -7,7 +7,7 @@ public class Ball {
     private final String PREFIX = "resources/";
     public static volatile boolean idle = true;
     private Picture ballPic;
-    private int drunk = 6;
+    private static int drunk = 6;
     private int randomizerPosition;
     private boolean ballShot = false;
 
@@ -20,6 +20,11 @@ public class Ball {
     //Getter for the ball shot to check if the ball has been shot already
     public boolean getBallShot(){
         return ballShot;
+    }
+
+    //Setter for the drunk int
+    public void setDrunk(){
+        drunk--;
     }
 
     //Ball class constructor gets the ball picture and .draw's it

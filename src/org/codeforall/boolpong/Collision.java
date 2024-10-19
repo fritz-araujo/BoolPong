@@ -26,6 +26,7 @@ public class Collision {
         return (ballX + ballWidth >= rectX1 && ballX <= rectX2) &&
                 (ballY + ballHeight >= rectY1 && ballY <= rectY2);
     }
+    /*NEEDS TO CALL THE PLAYER.UPDATECUPS METHOD AND SEND THAT CURRENT CUP*/
 }
 
 
