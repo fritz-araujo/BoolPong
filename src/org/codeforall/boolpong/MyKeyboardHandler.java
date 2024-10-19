@@ -27,7 +27,7 @@ public class MyKeyboardHandler implements KeyboardHandler {
         startGame.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(startGame);
 
-        //SPACE - shoot()
+        //SPACE - stops idle / starts force count / release to shoot
         KeyboardEvent space = new KeyboardEvent();
         space.setKey(KeyboardEvent.KEY_SPACE);
         space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);

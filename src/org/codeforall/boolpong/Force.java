@@ -26,6 +26,7 @@ public class Force {
     }
 
     public void startAccumulating(){
+        updateForce();
         accumulating = true;
     }
 
