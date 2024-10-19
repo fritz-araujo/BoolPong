@@ -14,7 +14,6 @@ public class Sound {
     public Sound(){
     }
 
-
     //Method for the sound to be threaded to not fix the instructions
     public void playSound(final String soundFile) {
         new Thread(new Runnable() {
@@ -41,5 +40,6 @@ public class Sound {
             throw new RuntimeException(e);
         }
     }
+
 
 }

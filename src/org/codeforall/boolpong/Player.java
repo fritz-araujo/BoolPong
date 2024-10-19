@@ -30,7 +30,7 @@ public class Player {
     //Method checks first if the ball has been shot, if not shots the ball and marks the setter as true
     //if not makes a new ball and gets it moving again for the new try
     public void shoot(){
-        if (!ball.getBallShot()){
+        if (!ball.getBallµaShot()){
             ball.setBallShot(true);
             ball.threadShoot();
             sound.playSound(PREFIX + "glug.wav");//IMPLEMENTATION FOR THE SOUND TO PLAY WHEN ALLCUPSDOWN--

@@ -1,4 +1,5 @@
 package org.codeforall.boolpong;
+
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -41,7 +42,6 @@ public class MyKeyboardHandler implements KeyboardHandler {
         quitGame.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(quitGame);
 
-
     }
 
     @Override
@@ -53,7 +53,18 @@ public class MyKeyboardHandler implements KeyboardHandler {
 
         //SPACE - shoot()
         if(keyboardEvent.getKey() == KeyboardEvent.KEY_SPACE){
-            player.shoot();
+            if(!ball is stopped){
+                //stops idle;
+                //starts force()
+            }
+            if(ball is stopped){
+                player.shoot();
+                if(player hits cups){
+                    plays glug sound;
+                }
+            }
+
+
         }
 
         //R - restart()
