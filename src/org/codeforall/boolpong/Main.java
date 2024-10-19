@@ -22,7 +22,7 @@ public class Main {
         Player player1 = new Player();
 
         //initialise keyboard
-        new MyKeyboardHandler(player1);
+        new MyKeyboardHandler(player1, new Force());
 
         //game initialisation
         player1.newBall();

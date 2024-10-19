@@ -40,6 +40,4 @@ public class Sound {
             throw new RuntimeException(e);
         }
     }
-
-
 }

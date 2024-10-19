@@ -9,11 +9,14 @@ public class Player {
     private Ball ball;
     private int allCupsDown = 6;
     private Cups[] cups = new Cups[6];
-    Sound sound = new Sound();
+    private Sound sound = new Sound();
+    private Force force;
+    private boolean forceAccumulating = false;
 
     //Player class constructor
     public Player(){
         createCups();
+        force = new Force();
     }
 
     //Game start, creates a ball if we have cups, and the ball stays moving until method "shoot"
@@ -22,20 +25,29 @@ public class Player {
             if (ball != null) {
                 ball.removeBall();
             }
-            this.ball = new Ball();
+            this.ball = new Ball(force);
             ball.stayMoving();
+            force.resetForce();
         }
     }
 
-    //Method checks first if the ball has been shot, if not shots the ball and marks the setter as true
-    //if not makes a new ball and gets it moving again for the new try
-    public void shoot(){
-        if (!ball.getBallµaShot()){
-            ball.setBallShot(true);
-            ball.threadShoot();
-            sound.playSound(PREFIX + "glug.wav");/*IMPLEMENTATION FOR THE SOUND TO PLAY WHEN ALLCUPSDOWN--*/
+    //Handles the shooting process with the force accumulation mechanic
+    public void beforeShoot() {
+        if (!ball.getBallShot()) {
+            if (!forceAccumulating) {
+                // Stop the ball from moving and start accumulating force
+                ball.stopIdleMovement();
+                force.startAccumulating();
+                forceAccumulating = true;
+            }
+        }
+    }
 
-        } else newBall();
+    public void shoot() {
+        // Stop accumulating, shoot the ball, and play sound
+        force.stopAccumulating();
+        ball.threadShoot(); // Shoot using accumulated force
+        forceAccumulating = false; // Reset the accumulation flag
     }
 
     //Instantiates all the cups and saves them on cups array
@@ -55,11 +67,13 @@ public class Player {
         cups[5] = cup5;
     }
 
-    //GAME FLOW STUFF
+
+    //Player can restart game
     public void restartGame(){
         System.out.println("game restarted"); /*STILL NEEDS TO BE WORKED ON*/
     }
 
+    //Player can quit game
     public void quitGame(){
         System.exit(0);
     }
