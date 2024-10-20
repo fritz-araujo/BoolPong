@@ -32,11 +32,16 @@ public class Cups {
     }
 
     //Cup remover
-    public void cupRemover(){
-        if (!wasHit){
+    public void cupRemover() {
+        if (!wasHit) {
             sprite.delete();
-            player.setAllCupsDown();
-            wasHit = true;
+            if (!player.getReset()) {
+                System.out.println("Ah");
+                player.setAllCupsDown();
+                wasHit = true;
+            } else {
+                player.setReset(true);
+            }
         }
     }
 }

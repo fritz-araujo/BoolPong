@@ -13,6 +13,15 @@ public class Player {
     Sound sound = new Sound();
     private int gameStarted = 0;
     Player selfReference;
+    private boolean reset = false;
+
+    public boolean getReset(){
+        return reset;
+    }
+
+    public void setReset(boolean reset){
+        this.reset = reset;
+    }
 
     //Player class constructor
     public Player(){
@@ -105,8 +114,21 @@ public class Player {
     }
 
     //GAME FLOW STUFF
-    public void restartGame(){
-        System.out.println("game restarted"); /*STILL NEEDS TO BE WORKED ON*/
+    public void restartGame() {
+        System.out.println("game restarted");
+        if (gameStarted < 2) {
+            System.out.println("Start the game first");
+        } else {
+            for (int i = 0 ; i<6 ; i++){
+                reset = true;
+                cups[i].cupRemover();
+            }
+            createCups();
+            newBall();
+            allCupsDown = 6;
+            ball.setDrunkValue();
+
+        }
     }
 
     public void quitGame(){
