@@ -11,8 +11,8 @@ public class MyKeyboardHandler implements KeyboardHandler {
 
     public MyKeyboardHandler(Player player){
         keyboard = new Keyboard(this);
-        setKeyboardEvents();
         this.player = player;
+        setKeyboardEvents();
     }
 
     public void setKeyboardEvents(){

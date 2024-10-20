@@ -28,12 +28,8 @@ public class Player {
 
         if (hitCupIndex != -1) {
             // If a cup was hit, remove it
-            System.out.println("Collision detected with cup: " + hitCupIndex);
             cups[hitCupIndex].cupRemover();
             System.out.println("Cup " + hitCupIndex + " was hit and removed!");
-        } else {
-            // Print this if no collision occurs (optional)
-            System.out.println("No collision detected");
         }
     }
 
@@ -65,15 +61,19 @@ public class Player {
         if (!ball.getBallShot()){
             ball.setBallShot(true);
             ball.threadShoot();
-            new Thread(() -> {
-                try {
-                    // Wait until the ball finishes shooting
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        // Wait until the ball finishes shooting
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Check for collision after the ball stops
+                    checkForCollision();
                 }
-                // Check for collision after the ball stops
-                checkForCollision();
             }).start();
         } else newBall();
     }
