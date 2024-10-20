@@ -1,0 +1,32 @@
+<project default="archive">
+
+    <target name="prepare">
+        <mkdir dir="build/classes"/>
+    </target>
+
+    <target name="compile" depends="prepare">
+        <javac srcdir="src" destdir="build/classes" source="1.7" target="1.7">
+            <classpath>
+		    <fileset dir="librarie¢s"> <!-- this should match the name of your library folder -->
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="archive" depends="compile">
+        <jar destfile="build/Bool-Pong.jar" basedir="build/classes"> <!-- change the name of your jar file -->
+            <manifest>
+                <attribute name="Main-Class" value="org.codeforall.boolpong.Main"/> <!-- change the path to your main -->
+            </manifest>
+	    <zipgroupfileset dir="libraries"/> <!-- this should match the name of your library folder -->
+            <fileset dir="resources"/>
+        </jar>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+
+</project>

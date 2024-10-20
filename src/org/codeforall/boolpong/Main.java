@@ -5,7 +5,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Main {
     public static void main(String[] args) {
 
-        final String PREFIX = "resources/";
+        final String PREFIX = "";
 
         //set canvas
         Canvas.setMaxX(440); //background resolution -10

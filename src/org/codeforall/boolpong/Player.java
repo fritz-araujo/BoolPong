@@ -5,7 +5,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Player {
 
     //Player class properties
-    private final String PREFIX = "resources/";
+    private final String PREFIX = "";
     private Ball ball;
     private int allCupsDown = 6;
     private Cups[] cups = new Cups[6];

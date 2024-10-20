@@ -4,7 +4,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Ball {
 
     //Ball class properties
-    private final String PREFIX = "resources/";
+    private final String PREFIX = "";
     public static volatile boolean idle = true;
     private Picture ballPic;
     private static int drunk = 6;
