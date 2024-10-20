@@ -48,6 +48,7 @@ public class MyKeyboardHandler implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //ENTER - startGame()
         if(keyboardEvent.getKey() == KeyboardEvent.KEY_ENTER){ /*STILL NEEDS TO BE WORKED ON*/
+            player.gameStart();
             System.out.println("STARTING KEY WORKING");
         }
 

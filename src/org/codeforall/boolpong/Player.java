@@ -11,15 +11,15 @@ public class Player {
     private Cups[] cups = new Cups[6];
     private Collision collision;
     Sound sound = new Sound();
-
+    private boolean gameStarted = false;
     Player selfReference;
 
     //Player class constructor
     public Player(){
         this.selfReference = this;
         this.collision = new Collision();
-        createCups();
     }
+
     public void checkForCollision() {
         int ballX = ball.getX();  // Get ball's current X position
         int ballY = ball.getY();
@@ -112,4 +112,22 @@ public class Player {
     public void quitGame(){
         System.exit(0);
     }
+
+    public void gameStart() {
+        Picture start = new Picture(0, 0, PREFIX + "entrada.gif");
+        if (!gameStarted) {
+            start.draw();
+            gameStarted = true;
+        }
+        else {
+            start.delete();
+            Picture background = new Picture(0, 0, PREFIX + "background.png");
+            Picture table = new Picture(0, 200, PREFIX + "table.png");
+            background.draw();
+            table.draw();
+            createCups();
+            newBall();
+        }
+    }
+
 }

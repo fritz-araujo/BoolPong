@@ -11,12 +11,6 @@ public class Main {
         Canvas.setMaxX(440); //background resolution -10
         Canvas.setMaxY(790);
 
-        //set background
-        Picture background = new Picture(0, 0, PREFIX +"background.png");
-        Picture table = new Picture(0, 200,PREFIX + "table.png");
-        background.draw();
-        table.draw();
-
         //CREATE CUP ARRAY! with position with the right sprites
         //set players - creates a ball
         Player player1 = new Player();
@@ -25,7 +19,7 @@ public class Main {
         new MyKeyboardHandler(player1);
 
         //game initialisation
-        player1.newBall();
+        player1.gameStart();
 
 //        Field field;
 //        field = new Field(22, 40);
