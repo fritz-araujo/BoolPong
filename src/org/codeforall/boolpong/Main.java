@@ -1,12 +1,14 @@
 package org.codeforall.boolpong;
 import org.academiadecodigo.simplegraphics.graphics.Canvas;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Main {
     public static void main(String[] args) {
 
+<<<<<<< HEAD
         final String PREFIX = "";
 
+=======
+>>>>>>> c1a52b60e7edde035f8286cc7417ae67f21c7102
         //set canvas
         Canvas.setMaxX(440); //background resolution -10
         Canvas.setMaxY(790);

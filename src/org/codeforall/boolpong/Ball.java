@@ -34,6 +34,10 @@ public class Ball {
         return ballShot;
     }
 
+    public void setDrunkValue(){
+        drunk = 6;
+    }
+
     //Setter for the drunk int
     public void setDrunk(){
         drunk--;
